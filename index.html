@@ -40,7 +40,7 @@ input.el.bad,.gap.bad{background:#fde0dc;color:#ad2a1f}
 .gap.target{box-shadow:inset 0 0 0 2px var(--yellow-d)}
 .chip{display:flex;align-items:center;justify-content:center;background:var(--yellow);border-radius:8px;font-weight:800;color:var(--ink);cursor:grab;touch-action:none;box-shadow:0 2px 0 var(--yellow-d)}
 .chip.sel{outline:3px solid var(--purple)}
-.chip.used{opacity:.25;box-shadow:none}
+.chip.used{background:#fef2de;color:transparent;box-shadow:none;cursor:default}
 .opt{border-radius:7px;box-shadow:inset 0 0 0 0 transparent}
 .opt:hover{background:rgba(91,58,155,.1)}
 .opt.sel{background:rgba(255,214,90,.42);box-shadow:inset 0 0 0 2px var(--purple)}
@@ -76,6 +76,14 @@ input.el.bad,.gap.bad{background:#fde0dc;color:#ad2a1f}
 .tg:hover .tgt{text-decoration:underline}
 .tg:focus-visible{outline:3px solid var(--blue);outline-offset:2px}
 @media(min-width:960px){.nav{position:relative}.tg{position:absolute;right:14px;top:50%;transform:translateY(-50%)}}
+.vb{border-radius:50%}.vb:hover{background:rgba(27,118,201,.14)}
+.vb.sel{box-shadow:inset 0 0 0 2px var(--blue)}.vb.ok{box-shadow:inset 0 0 0 2px var(--green);background:rgba(46,158,107,.14)}.vb.bad{box-shadow:inset 0 0 0 2px var(--red);background:rgba(217,72,59,.14)}
+.taskbar{width:100%;max-width:760px;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:8px 14px;border-radius:14px;background:var(--paper);font-size:clamp(18px,2.4vw,23px)}
+.refw{position:relative}.ref{cursor:zoom-in}.zb{position:absolute;top:8px;right:8px;padding:7px 13px;border-radius:11px;background:var(--yellow);font-weight:800;box-shadow:0 2px 0 var(--yellow-d)}
+.lb{position:fixed;inset:0;z-index:35;background:rgba(46,26,94,.9);display:flex;flex-direction:column}
+.lbt{flex:none;display:flex;justify-content:center;align-items:center;gap:10px;padding:8px;color:#fff;font-weight:800}
+.lbt .btn{min-width:48px}.lbv{flex:1;min-height:0;overflow:auto;padding:0 12px 12px;cursor:grab}
+.lbi{margin:0 auto}.lbi .sheet{width:100%}
 .modal{position:fixed;inset:0;background:rgba(46,26,94,.6);display:flex;align-items:center;justify-content:center;padding:14px;z-index:30}
 .box{background:#fff;border-radius:18px;padding:18px;width:min(560px,100%);max-height:92vh;overflow:auto}
 .box h2{margin:0 0 8px;font-size:22px}
@@ -93,23 +101,23 @@ body.setup .el{outline:2px dashed var(--red);background:rgba(255,214,90,.34)!imp
 body.setup .el .hd{position:absolute;right:-5px;bottom:-5px;width:14px;height:14px;border-radius:4px;background:var(--red);cursor:nwse-resize}
 .ghost{position:fixed;z-index:40;pointer-events:none;background:var(--yellow);border-radius:8px;font-weight:800;padding:5px 12px}
 /* verbs */
-.vs{width:min(620px,100%);background:var(--paper);border-radius:20px;padding:18px;box-shadow:0 3px 16px rgba(66,40,122,.25);position:relative}
-.vs h2{margin:0;font-size:25px;color:var(--purple)}
+.vs{width:min(940px,100%);margin:auto;background:var(--paper);border-radius:24px;padding:clamp(16px,3vw,30px);font-size:20px;box-shadow:0 3px 16px rgba(66,40,122,.25);position:relative}
+.vs h2{margin:0;font-size:clamp(25px,3.4vw,38px);color:var(--purple)}
 .vs p{margin:4px 0 0}
 .dots{display:flex;flex-wrap:wrap;gap:5px;margin:12px 0}
 .dots i{width:15px;height:15px;border-radius:50%;background:#e5dbf4;display:block}
 .dots i.d{background:var(--green)}.dots i.c{background:var(--yellow-d)}
 .vcard{background:var(--purple);color:#fff;border-radius:16px;padding:18px;text-align:center}
-.vcard b{display:block;font-size:clamp(44px,12vw,68px);line-height:1.05}
+.vcard b{display:block;font-size:clamp(48px,min(11vw,14vh),116px);line-height:1.05}
 .two{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px}
-.vbtn{min-height:62px;border-radius:14px;font-weight:800;font-size:19px;background:var(--lilac);box-shadow:0 4px 0 #c3b2e3}
+.vbtn{min-height:clamp(62px,11vh,92px);border-radius:16px;font-weight:800;font-size:clamp(19px,2.8vw,28px);background:var(--lilac);box-shadow:0 4px 0 #c3b2e3}
 .vbtn.reg{background:#cfe9fb;box-shadow:0 4px 0 #97c8e8}.vbtn.irr{background:var(--yellow);box-shadow:0 4px 0 var(--yellow-d)}
 .vbtn.shk{animation:shk .4s}
 @keyframes shk{20%,60%{transform:translateX(-6px)}40%,80%{transform:translateX(6px)}}
-.past{font-size:clamp(38px,10vw,56px);font-weight:900;color:var(--blue);text-align:center;margin:10px 0 0;line-height:1.1}
+.past{font-size:clamp(38px,min(9vw,10vh),76px);font-weight:900;color:var(--blue);text-align:center;margin:10px 0 0;line-height:1.1}
 .badge{display:inline-block;padding:2px 12px;border-radius:9px;font-weight:800;font-size:15px;background:var(--lilac)}
-.q{font-size:24px;font-weight:800;margin:10px 0 0;line-height:1.2}
-.starter{display:inline-block;margin-top:8px;padding:8px 16px;border-radius:14px;background:var(--lilac);font-size:21px;font-style:italic;font-weight:700}
+.q{font-size:clamp(23px,3.2vw,34px);font-weight:800;margin:10px 0 0;line-height:1.2}
+.starter{display:inline-block;margin-top:8px;padding:8px 20px;border-radius:14px;background:var(--lilac);font-size:clamp(21px,2.8vw,30px);font-style:italic;font-weight:700}
 .bit{position:fixed;top:-16px;width:10px;height:15px;z-index:50;pointer-events:none;animation:fall linear forwards}
 @keyframes fall{to{transform:translateY(112vh) rotate(600deg)}}
 @media(max-width:560px){.top h1 small{display:none}.top h1{font-size:15px;max-width:110px}.tbtn{padding:0 9px;font-size:14px}.btn{padding:7px 14px}}
@@ -140,7 +148,7 @@ const PAGES=[
 {id:"match",title:"Grammar Discovery",sub:"Match the verbs",img:"gram2",crop:[0,860,1199,400],match:true,hint:"Look at the verb table on the last page.",els:[
   {id:"l1",t:"ml",to:"rc",box:R(54,958,291,62)},{id:"l2",t:"ml",to:"rd",box:R(54,1032,291,62)},{id:"l3",t:"ml",to:"ra",box:R(54,1105,291,62)},{id:"l4",t:"ml",to:"rb",box:R(54,1179,291,62)},
   {id:"ra",t:"mr",box:R(462,958,294,62)},{id:"rb",t:"mr",box:R(462,1030,294,62)},{id:"rc",t:"mr",box:R(462,1103,294,62)},{id:"rd",t:"mr",box:R(462,1176,294,62)}]},
-{id:"comic",title:"6.3 Grammar",sub:"Read the cartoon",img:"comic",crop:[0,0,1086,1065],info:"Read the cartoon. You need it for the next two exercises.",els:[]},
+{id:"comic",title:"6.3 Grammar",sub:"Read the cartoon",img:"comic",crop:[0,0,1086,1065],task:"Find and circle the irregular verbs.",hint:"Regular verbs end in -ed, so do not circle them. Remember: was, were and wasn't are irregular too.",els:[{id:"were",t:"vb",right:true,box:R(257,389,50,22)},{id:"wasnt1",t:"vb",right:true,box:R(187,432,63,22)},{id:"made",t:"vb",right:true,box:R(756,412,59,22)},{id:"helped",t:"vb",box:R(777,432,70,22)},{id:"took1",t:"vb",right:true,box:R(193,673,44,22)},{id:"was1",t:"vb",right:true,box:R(152,694,42,22)},{id:"had",t:"vb",right:true,box:R(284,693,41,22)},{id:"wasnt2",t:"vb",right:true,box:R(176,714,63,22)},{id:"went",t:"vb",right:true,box:R(643,691,50,22)},{id:"wanted",t:"vb",box:R(949,690,71,22)},{id:"was2",t:"vb",right:true,box:R(837,711,43,22)},{id:"drank",t:"vb",right:true,box:R(691,729,58,22)},{id:"took2",t:"vb",right:true,box:R(151,984,44,22)},{id:"met",t:"vb",right:true,box:R(403,984,40,22)},{id:"was3",t:"vb",right:true,box:R(255,1005,41,22)},{id:"ate",t:"vb",right:true,box:R(444,1005,37,22)},{id:"was4",t:"vb",right:true,box:R(672,982,41,22)},{id:"felt",t:"vb",right:true,box:R(816,982,36,22)},{id:"washed",t:"vb",box:R(915,982,70,22)},{id:"came",t:"vb",right:true,box:R(809,1001,54,22)}]},
 {id:"task1",title:"6.3 Exercise 1",sub:"Look at the cartoon",img:"t1",crop:[20,1085,430,270],ref:"comic",hint:"Not all of these jobs are in the cartoon. Look at the pictures again.",els:[
   {id:"police",t:"tick",box:R(66,1205,215,38),fixed:true},
   {id:"shop",t:"tick",box:R(66,1254,230,38),right:true},
@@ -202,15 +210,16 @@ function draw(){
     <div class="prog"><span>${idx+1} / ${PAGES.length}</span><div class="bar"><i style="width:${(idx+1)/PAGES.length*100}%"></i></div></div>
     <button class="tbtn" data-a="res">Results</button><button class="tbtn icon" data-a="fs" aria-label="Full screen">⛶</button><button class="tbtn icon ${setup?"on":""}" data-a="setup" aria-label="Set up" title="Set up">⚙</button></header>`;
   let body="",nav="";
-  const canCheck=p.els.some(e=>["text","free","opt","tick","ml","gap","time"].includes(e.t));
+  const canCheck=p.els.some(e=>["text","free","opt","tick","ml","gap","time","vb"].includes(e.t));
   if(p.verbs){ body=verbsHtml(); }
   else{
     const ratio=p.crop[2]/p.crop[3];
     const w=`width:min(100%,max(calc((100dvh - ${p.speak?205:165}px)*${ratio}),${p.ref?520:p.speak?300:760}px))`;
     const sheet=`<div class="sheet" id="sheet" style="aspect-ratio:${p.crop[2]}/${p.crop[3]};${p.ref?"":w}"><img src="${IMG[p.img]}" alt="${esc(p.sub)}">${p.match?'<svg class="lines" id="lines" viewBox="0 0 100 100" preserveAspectRatio="none"></svg>':""}${p.els.map(e=>elHtml(p,e,st)).join("")}</div>`;
-    body=p.ref?`<div class="wrap withref">${sheet}<img class="ref" src="${IMG[p.ref]}" alt="Cartoon"></div>`:sheet;
+    body=p.ref?`<div class="wrap withref">${sheet}<div class="refw"><img class="ref" data-a="zoom" src="${IMG[p.ref]}" alt="Cartoon"><button class="zb" data-a="zoom">🔍 Zoom</button></div></div>`:sheet;
     const m=st.msg||(p.info?{c:"",t:p.info}:null);
     if(p.speak) body+=`<div class="msg">${p.info} Said: ${Object.keys(st.said).length} / 8</div>`;
+    else if(p.task) body=`<div class="taskbar"><b>${p.task}</b><button class="btn y" data-a="zoom">🔍 Zoom</button></div>`+(m?`<div class="msg ${m.c}">${m.t}</div>`:"")+body;
     else if(m) body+=`<div class="msg ${m.c}">${m.t}</div>`;
   }
   nav=`<nav class="nav"><button class="btn" data-a="prev" ${idx===0?"disabled":""}>← Back</button>
@@ -223,7 +232,24 @@ function draw(){
   document.body.classList.toggle("setup",setup);
   if(sc&&draw.same===idx) document.querySelector(".main").scrollTop=y; draw.same=idx;
   drawLines();
+  drawLb();
 }
+/* cartoon zoom */
+let lb=null,pan=null;
+const LBR=1086/1065;
+function lbBase(){return Math.min(innerWidth-24,(innerHeight-76)*LBR);}
+function openLb(){lb={z:1.5};const d=document.createElement("div");d.className="lb";d.id="lb";d.innerHTML=`<div class="lbt"><button class="btn" data-a="lbm" aria-label="Zoom out">−</button><span id="lbp"></span><button class="btn" data-a="lbp" aria-label="Zoom in">+</button><button class="btn y" data-a="lbx">Close</button></div><div class="lbv" id="lbv"><div class="lbi" id="lbi"></div></div>`;document.body.appendChild(d);drawLb();const v=document.getElementById("lbv");v.scrollLeft=(v.scrollWidth-v.clientWidth)/2;}
+function closeLb(){lb=null;const d=document.getElementById("lb");if(d)d.remove();}
+function drawLb(){if(!lb)return;const p=PAGES[idx],st=ST[p.id],i=document.getElementById("lbi");if(!i)return;
+  const w=Math.round(lbBase()*lb.z);i.style.width=w+"px";document.getElementById("lbp").textContent=Math.round(lb.z*100)+"%";
+  i.innerHTML=p.task?`<div class="sheet" style="aspect-ratio:${p.crop[2]}/${p.crop[3]}"><img src="${IMG[p.img]}" alt="Cartoon">${p.els.map(e=>elHtml(p,e,st)).join("")}</div>`:`<img src="${IMG.comic}" alt="Cartoon" style="width:100%;display:block;border-radius:10px">`;}
+function zoomLb(f){if(!lb)return;const v=document.getElementById("lbv"),cx=(v.scrollLeft+v.clientWidth/2)/v.scrollWidth,cy=(v.scrollTop+v.clientHeight/2)/v.scrollHeight;
+  lb.z=Math.min(4,Math.max(1,lb.z*f));drawLb();v.scrollLeft=cx*v.scrollWidth-v.clientWidth/2;v.scrollTop=cy*v.scrollHeight-v.clientHeight/2;}
+document.addEventListener("keydown",e=>{if(e.key==="Escape")closeLb();});
+document.addEventListener("wheel",e=>{if(lb&&e.ctrlKey){e.preventDefault();zoomLb(e.deltaY<0?1.1:.91);}},{passive:false});
+document.addEventListener("pointerdown",e=>{const v=e.target.closest&&e.target.closest("#lbv");if(v&&e.pointerType==="mouse")pan={v,x:e.clientX,y:e.clientY,l:v.scrollLeft,t:v.scrollTop,m:false};});
+document.addEventListener("pointermove",e=>{if(!pan)return;const dx=e.clientX-pan.x,dy=e.clientY-pan.y;if(Math.hypot(dx,dy)>6)pan.m=true;if(pan.m){pan.v.scrollLeft=pan.l-dx;pan.v.scrollTop=pan.t-dy;}});
+document.addEventListener("pointerup",()=>{if(pan&&pan.m){dragJust=true;setTimeout(()=>dragJust=false,60);}pan=null;});
 function elHtml(p,e,st){
   const b=boxOf(p,e),style=`left:${b[0]}%;top:${b[1]}%;width:${b[2]}%;height:${b[3]}%`,hBase=b[3];
   const fs=`font-size:${hBase*.8}cqh`,m=st.marks[e.id]||"",hd=setup?'<i class="hd"></i>':"";
@@ -237,6 +263,7 @@ function elHtml(p,e,st){
    case "chip":{const used=Object.values(st.v).includes(e.id);return `<div class="el chip ${used?"used":""} ${selChip===e.id?"sel":""}" ${k} style="${style};${fs}">${e.word}${hd}</div>`;}
    case "gap":{const c=st.v[e.id],w=c?p.els.find(x=>x.id===c).word:"";return `<div class="el gap ${m}" ${k} style="${style};${fs}">${w}${hd}</div>`;}
    case "ml":case "mr":{return `<button class="el mt ${selL===e.id?"sel":""} ${m}" ${k} style="${style}" aria-label="${e.id}">${hd}</button>`;}
+   case "vb":return `<button class="el vb ${st.v[e.id]?"sel":""} ${m}" ${k} style="${style}" aria-label="${e.id.replace(/\d/g,"")}">${hd}</button>`;
    case "card":return `<button class="el card ${st.said[e.id]?"done":""}" ${k} style="${style}" aria-label="Card ${e.id.slice(1)}">${hd}</button>`;
   }
   return "";
@@ -272,11 +299,12 @@ function check(){
     else if(e.t==="free"){tot++;const g=norm(st.v[e.id]).length>0;if(g)ok++;st.marks[e.id]=g?"ok":"bad";}
     else if(e.t==="gap"){tot++;const c=st.v[e.id],g=c&&p.els.find(x=>x.id===c).word===e.ans;if(g)ok++;st.marks[e.id]=g?"ok":"bad";}
     else if(e.t==="tick"&&!e.fixed){tot++;const g=!!st.v[e.id]===!!e.right;if(g)ok++;if(st.v[e.id]||e.right)st.marks[e.id]=g?"ok":"bad";}
+    else if(e.t==="vb"){if(e.right){tot++;if(st.v[e.id]){ok++;st.marks[e.id]="ok";}}else if(st.v[e.id]){ok--;st.marks[e.id]="bad";}}
     else if(e.t==="ml"){tot++;const g=st.v[e.id]===e.to;if(g)ok++;st.marks[e.id]=g?"ok":"bad";}
     else if(e.t==="opt"){if(!opts[e.group]){opts[e.group]=1;tot++;const v=st.v[e.group],rg=p.els.find(x=>x.group===e.group&&x.right);if(v===rg.val)ok++;}
       if(st.v[e.group]===e.val)st.marks[e.id]=e.right?"ok":"bad";}
   });
-  st.score=ok;st.total=tot;st.done=true;
+  ok=Math.max(0,ok);st.score=ok;st.total=tot;st.done=true;
   if(ok===tot){st.msg={c:"ok",t:p.free?"Great! Now read your sentences out loud.":"All correct! Well done!"};confetti();}
   else st.msg={c:"bad",t:`${ok} out of ${tot} correct. ${p.hint}`};
   draw();
@@ -310,6 +338,7 @@ document.addEventListener("click",ev=>{
   if(a&&!a.disabled){const x=a.dataset.a;
     if(x==="next"&&idx<PAGES.length-1){idx++;selChip=selL=null;draw();}
     else if(x==="prev"&&idx>0){idx--;selChip=selL=null;draw();}
+    else if(x==="zoom")openLb(); else if(x==="lbp")zoomLb(1.25); else if(x==="lbm")zoomLb(.8); else if(x==="lbx")closeLb();
     else if(x==="check")check(); else if(x==="retry")retry(); else if(x==="res")results(); else if(x==="close")closeM(); else if(x==="send")send();
     else if(x==="fs"){if(document.fullscreenElement)document.exitFullscreen();else{const q=document.documentElement.requestFullscreen&&document.documentElement.requestFullscreen();if(q&&q.catch)q.catch(()=>{});}}
     else if(x==="setup"){setup=!setup;draw();}
@@ -336,6 +365,7 @@ document.addEventListener("click",ev=>{
   else if(e.t==="gap"){if(selChip){place(st,e.id,selChip);selChip=null;draw();}else if(st.v[e.id]){delete st.v[e.id];delete st.marks[e.id];draw();}}
   else if(e.t==="ml"){selL=selL===e.id?null:e.id;draw();}
   else if(e.t==="mr"){if(selL){Object.keys(st.v).forEach(k=>{if(st.v[k]===e.id)delete st.v[k];});st.v[selL]=e.id;delete st.marks[selL];selL=null;draw();}}
+  else if(e.t==="vb"){st.v[e.id]=!st.v[e.id];delete st.marks[e.id];draw();}
   else if(e.t==="card"){zoomCard(e,p);}
   else if(e.t==="show"){p.els.filter(x=>x.t==="text").forEach(x=>{st.v[x.id]=x.ans[0];st.marks[x.id]="ok";});st.shown=true;st.done=true;st.score=p.els.filter(x=>x.t==="text").length;st.total=st.score;st.msg={c:"",t:"Here are the answers. Read them out loud."};draw();}
 });
